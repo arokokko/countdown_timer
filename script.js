@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', function(){
             'total': t,               /* функция возвращает объект с записанными данными */
             'seconds': seconds,
             'minutes': minutes,
+            // 'days': days,
             'hours': hours
         };
     }
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', function(){
     function setClock(id, endtime) {
         let timer = document.getElementById(id),         /* получаем данные из верстки */
             hours = timer.querySelector(".hours"),
+            // days = timer.querySelector(".days"),
             minutes = timer.querySelector('.minutes'),
             seconds = timer.querySelector('.seconds'),
             timeInterval = setInterval(clockUpdate, 1000);   /* запускаем функцию обновления раз в секунду */
@@ -45,6 +47,7 @@ window.addEventListener('DOMContentLoaded', function(){
             hours.textContent = addZero(t.hours);          /* а потом перезаписывает данные в верстку */
             minutes.textContent = addZero(t.minutes);
             seconds.textContent = addZero(t.seconds);
+            // days.textContent = t.days;
         }
     }
 
