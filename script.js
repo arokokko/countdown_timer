@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function(){
     'use strict';
 
-    let deadLine = '2020-02-22';    /* устанавливаем дату окончания срока */
+    let deadLine = '2020-02-25 GMT+0700';    /* устанавливаем дату окончания срока + свой часовой пояс*/
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),   /* количество миллисекунд между окончанием срока и текущей датой */
@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function(){
             if (t.total <= 0) {                       /*  отключаем таймер когда выходит время */
                 clearInterval(timeInterval);
             } else {
-                addZero = function(num) {              /* функция добавления 0 когда секунд или минут меньше 10 */
+                addZero = function(num) {              /* функция добавления 0 когда секунд, минут или часов меньше 10 */
                     if(num < 10) {
                         return ('0' + num);
                     } else {
